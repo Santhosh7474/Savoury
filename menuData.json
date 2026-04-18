@@ -1,0 +1,346 @@
+[
+  {
+    "name": "Burrata & Fig Crostini",
+    "price": 15,
+    "category": "Starters",
+    "image": "https://images.getrecipekit.com/20220922194212-burrata-20prosciutto.jpg?aspect_ratio=4:3&quality=90&",
+    "description": "Creamy burrata, fresh figs, honeycomb, and reduced balsamic on toasted artisan baguette.",
+    "detailedDescription": "Creamy burrata, fresh figs, honeycomb, and reduced balsamic on toasted artisan baguette. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Steak Tartare",
+    "price": 22,
+    "category": "Starters",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/db/Classic_steak_tartare.jpg",
+    "description": "Hand-cut prime tenderloin, capers, shallots, Dijon, topped with a quail egg yolk.",
+    "detailedDescription": "Hand-cut prime tenderloin, capers, shallots, Dijon, topped with a quail egg yolk. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Oysters on the Half Shell",
+    "price": 28,
+    "category": "Starters",
+    "image": "https://images.unsplash.com/photo-1559841644-08984562005a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "description": "Half-dozen fresh blue point oysters served with classic mignonette and fresh lemon.",
+    "detailedDescription": "Half-dozen fresh blue point oysters served with classic mignonette and fresh lemon. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Truffle Fries",
+    "price": 10,
+    "category": "Starters",
+    "image": "https://www.thespruceeats.com/thmb/ri8ba_zHckEKdjPRhc1neyZsufE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/easy-homemade-truffle-fries-recipe-1375725-hero-02-a9d4ccb2e72544469c044f6ddd728bf3.jpg",
+    "description": "Hand-cut Idaho potatoes tossed in white truffle oil, parmesan, and fresh parsley.",
+    "detailedDescription": "Hand-cut Idaho potatoes tossed in white truffle oil, parmesan, and fresh parsley. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Charcuterie Board",
+    "price": 32,
+    "category": "Starters",
+    "image": "https://loveonetoday.com/wp-content/uploads/Love-One-Today-Avocado-Recipes-Featured-Avocado-Holiday-Charcuterie-Board.jpg",
+    "description": "Chef's selection of imported cured meats, artisanal cheeses, olives, and preserves.",
+    "detailedDescription": "Chef's selection of imported cured meats, artisanal cheeses, olives, and preserves. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Crab Cakes",
+    "price": 24,
+    "category": "Starters",
+    "image": "https://hips.hearstapps.com/hmg-prod/images/crab-cakes-index-64e7cee7d4dda.jpg?crop=0.8891500963202403xw:1xh;center,top&resize=1200:*",
+    "description": "Jumbo lump Maryland crab meat perfectly seared, served with a zesty remoulade.",
+    "detailedDescription": "Jumbo lump Maryland crab meat perfectly seared, served with a zesty remoulade. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Duck Confit Spring Rolls",
+    "price": 18,
+    "category": "Starters",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwLWXuzSpOD9SIDxPvxLcPj1sNXcg4MRLc9w&s",
+    "description": "Slow-cooked duck leg confit in a crispy wrapper, served with plum dipping sauce.",
+    "detailedDescription": "Slow-cooked duck leg confit in a crispy wrapper, served with plum dipping sauce. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Bone Marrow Toast",
+    "price": 19,
+    "category": "Starters",
+    "image": "https://www.seriouseats.com/thmb/KA2VAR45rzlN0hVvetdaOwhLO4I=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/roasted-marrow-bones-hero-01FredHardy-c712a038f8d14c4597148c1ae72d0cb4.jpg",
+    "description": "Roasted bone marrow topped with caramelized onions and coarse sea salt on brioche.",
+    "detailedDescription": "Roasted bone marrow topped with caramelized onions and coarse sea salt on brioche. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Chateaubriand for Two",
+    "price": 120,
+    "category": "Main Course",
+    "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "description": "Center-cut beef tenderloin carved tableside, served with béarnaise sauce and roasted root vegetables.",
+    "detailedDescription": "Center-cut beef tenderloin carved tableside, served with béarnaise sauce and roasted root vegetables. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Wild Caught Chilean Sea Bass",
+    "price": 48,
+    "category": "Main Course",
+    "image": "https://nordiccatch.com/cdn/shop/files/wild-chilean-sea-bass-portions-skinless-bulk-case-994835.jpg?v=1767926362&width=1445",
+    "description": "Miso-glazed sea bass over a bed of forbidden black rice and steamed bok choy.",
+    "detailedDescription": "Miso-glazed sea bass over a bed of forbidden black rice and steamed bok choy. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Duck à l'Orange",
+    "price": 38,
+    "category": "Main Course",
+    "image": "https://www.seriouseats.com/thmb/ABI6hunJ3s5IGS0PDCakdj3rrzY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2018__11__20181023-duck-a-l-orange-vicky-wasik-36-2cbe64627b0246e5a4133c5ec40b276d.jpg",
+    "description": "Crispy pan-roasted duck breast with a Grand Marnier reduction and potato au gratin.",
+    "detailedDescription": "Crispy pan-roasted duck breast with a Grand Marnier reduction and potato au gratin. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Saffron Seafood Paella",
+    "price": 55,
+    "category": "Main Course",
+    "image": "https://images.unsplash.com/photo-1534080564583-6be75777b70a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "description": "Traditional Spanish rice cooked with shrimp, mussels, clams, calamari, and saffron.",
+    "detailedDescription": "Traditional Spanish rice cooked with shrimp, mussels, clams, calamari, and saffron. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Prime NY Strip",
+    "price": 52,
+    "category": "Main Course",
+    "image": "https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "description": "14oz dry-aged NY Strip steak, char-grilled to perfection with a peppercorn crust.",
+    "detailedDescription": "14oz dry-aged NY Strip steak, char-grilled to perfection with a peppercorn crust. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Pappardelle Bolognese",
+    "price": 26,
+    "category": "Main Course",
+    "image": "https://images.unsplash.com/photo-1626844131082-256783844137?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "description": "Slow-braised veal and beef ragout folded into wide ribbons of fresh house-made pasta.",
+    "detailedDescription": "Slow-braised veal and beef ragout folded into wide ribbons of fresh house-made pasta. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Roasted Butternut Gnocchi",
+    "price": 24,
+    "category": "Main Course",
+    "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "description": "Pillowy potato pasta with roasted local squash, brown butter, sage, and amaretti crumble.",
+    "detailedDescription": "Pillowy potato pasta with roasted local squash, brown butter, sage, and amaretti crumble. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Lemon Caper Veal Piccata",
+    "price": 34,
+    "category": "Main Course",
+    "image": "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "description": "Tender veal scallopini lightly battered and served in a delicate white wine lemon caper sauce.",
+    "detailedDescription": "Tender veal scallopini lightly battered and served in a delicate white wine lemon caper sauce. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Caramelized Lemon Tart",
+    "price": 12,
+    "category": "Desserts",
+    "image": "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "description": "Buttery shortbread crust filled with tangy lemon curd and topped with torched meringue.",
+    "detailedDescription": "Buttery shortbread crust filled with tangy lemon curd and topped with torched meringue. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Pistachio Gelato",
+    "price": 9,
+    "category": "Desserts",
+    "image": "https://www.allrecipes.com/thmb/dnLPgEgYVq45vN5XCvG9gUlgAuQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/240602-easy-pistachio-ice-cream-VAT-001-4x3-1a3174f5b8ae4de78767eb37862f0bf5.jpg",
+    "description": "Artisanal crushed pistachio gelato imported directly from Sicily. Three generous scoops.",
+    "detailedDescription": "Artisanal crushed pistachio gelato imported directly from Sicily. Three generous scoops. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Basque Burnt Cheesecake",
+    "price": 14,
+    "category": "Desserts",
+    "image": "https://www.allrecipes.com/thmb/TLA7V2KrtbkpZh1cmhffohP8_SE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/270713_BurntBasqueCheesecake_ddmfs_3x4_2411-a6030d5e7c2f4b37bc8569b9cd2b634b-0d39c7588c854340bb20e557d500024a.jpg",
+    "description": "Crustless cheesecake baked at high heat for a beautiful caramelized exterior and creamy center.",
+    "detailedDescription": "Crustless cheesecake baked at high heat for a beautiful caramelized exterior and creamy center. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Raspberry Mille-Feuille",
+    "price": 15,
+    "category": "Desserts",
+    "image": "https://images.unsplash.com/photo-1587314168485-3236d6710814?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "description": "Layers of delicate puff pastry, madagascar vanilla bean cream, and fresh raspberries.",
+    "detailedDescription": "Layers of delicate puff pastry, madagascar vanilla bean cream, and fresh raspberries. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Dark Chocolate Soufflé",
+    "price": 16,
+    "category": "Desserts",
+    "image": "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "description": "Baked to order airy grand cru chocolate perfection. Please allow 15 minutes preparation.",
+    "detailedDescription": "Baked to order airy grand cru chocolate perfection. Please allow 15 minutes preparation. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Affogato al Caffè",
+    "price": 11,
+    "category": "Desserts",
+    "image": "https://www.manusmenu.com/wp-content/uploads/2016/04/affogato-al-caffe-espresso-poured-over-gelato.webp",
+    "description": "A scoop of Tahitian vanilla bean gelato 'drowned' in a shot of hot fresh espresso.",
+    "detailedDescription": "A scoop of Tahitian vanilla bean gelato 'drowned' in a shot of hot fresh espresso. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Blood Orange Margarita",
+    "price": 15,
+    "category": "Drinks",
+    "image": "https://images.unsplash.com/photo-1587223075055-82e9a937ddff?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "description": "Blanco tequila, Cointreau, fresh blood orange juice, and a tajin spice rim.",
+    "detailedDescription": "Blanco tequila, Cointreau, fresh blood orange juice, and a tajin spice rim. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Spiced Pear Mule",
+    "price": 14,
+    "category": "Drinks",
+    "image": "https://images.unsplash.com/photo-1609951651556-5334e2706168?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "description": "Vodka, fresh pear nectar, ginger beer, lime, and a cinnamon stick garnish.",
+    "detailedDescription": "Vodka, fresh pear nectar, ginger beer, lime, and a cinnamon stick garnish. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Classic Negroni",
+    "price": 16,
+    "category": "Drinks",
+    "image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "description": "Equal parts gin, sweet vermouth, and Campari, stirred and served over a large format ice cube.",
+    "detailedDescription": "Equal parts gin, sweet vermouth, and Campari, stirred and served over a large format ice cube. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Lychee Martini",
+    "price": 17,
+    "category": "Drinks",
+    "image": "https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "description": "Ultra-premium vodka shaken with fresh lychee juice and a slight splash of vermouth.",
+    "detailedDescription": "Ultra-premium vodka shaken with fresh lychee juice and a slight splash of vermouth. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Cucumber Basil Smash",
+    "price": 15,
+    "category": "Drinks",
+    "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "description": "Gin, muddled English cucumber, torn basil leaves, simple syrup, and fresh lime.",
+    "detailedDescription": "Gin, muddled English cucumber, torn basil leaves, simple syrup, and fresh lime. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Prosecco Rosé",
+    "price": 18,
+    "category": "Drinks",
+    "image": "https://images.squarespace-cdn.com/content/v1/59c3feb149fc2b152179e47e/1617722359693-W1LB5FFP51S2233E9GL8/Prosecco+Rose_+Lifestyle.jpg",
+    "description": "Crisp sparkling Rosé imported directly from the Veneto region of Italy. Served by the glass.",
+    "detailedDescription": "Crisp sparkling Rosé imported directly from the Veneto region of Italy. Served by the glass. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Crispy Calamari",
+    "price": 14,
+    "category": "Starters",
+    "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "description": "Tender calamari rings, lightly dusted and fried, served with spicy aioli dipping sauce.",
+    "detailedDescription": "Tender calamari rings, lightly dusted and fried, served with spicy aioli dipping sauce. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Truffle Arancini",
+    "price": 16,
+    "category": "Starters",
+    "image": "https://s3-eu-west-1.amazonaws.com/tscimages/2020/03/13/5db6b97d342b00004c01779d/1584105966-2065e6b89ee324c46-44803957.jpg",
+    "description": "Crispy risotto balls stuffed with fresh mozzarella and shaved black truffle.",
+    "detailedDescription": "Crispy risotto balls stuffed with fresh mozzarella and shaved black truffle. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Heirloom Tomato Bruschetta",
+    "price": 12,
+    "category": "Starters",
+    "image": "https://bingeworthybites.com/wp-content/uploads/2022/09/jpg-2022-09-12T163117.436.jpeg",
+    "description": "Grilled artisan bread topped with heirloom tomatoes, basil, and a balsamic glaze reduction.",
+    "detailedDescription": "Grilled artisan bread topped with heirloom tomatoes, basil, and a balsamic glaze reduction. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Spicy Tuna Tartare",
+    "price": 19,
+    "category": "Starters",
+    "image": "https://recipes.clubandresortchef.com/wp-content/uploads/2025/02/spicy-tuna-tartare-jordan-northrup_recipe-scaled.jpeg",
+    "description": "Fresh ahi tuna, avocado, sesame oil, and sriracha, served with crispy wonton chips.",
+    "detailedDescription": "Fresh ahi tuna, avocado, sesame oil, and sriracha, served with crispy wonton chips. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Wagyu Ribeye Steak",
+    "price": 45,
+    "category": "Main Course",
+    "image": "https://dd7e06dda74c9c553ede.cdn6.editmysite.com/uploads/b/dd7e06dda74c9c553ede1f037e178abe49e1218ed77adf1f1d058f20e0b12d42/Wagyu-Ribeye-Steak-recipe_1666831431.jpg?width=2400&optimize=medium&height=480&fit=cover&dpr=2.625",
+    "description": "Perfectly seared 12oz Wagyu Ribeye, garlic herb butter, and roasted asparagus.",
+    "detailedDescription": "Perfectly seared 12oz Wagyu Ribeye, garlic herb butter, and roasted asparagus. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Truffle Royale Pizza",
+    "price": 24,
+    "category": "Main Course",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYkdGlVlQ96Mt3PVc6Cnx-I1S9TfuoTO_uXQ&s",
+    "description": "Hand-tossed crust, rich truffle cream, wild mushrooms, and fresh mozzarella.",
+    "detailedDescription": "Hand-tossed crust, rich truffle cream, wild mushrooms, and fresh mozzarella. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Pan-Seared Scallops",
+    "price": 38,
+    "category": "Main Course",
+    "image": "https://www.inspiredtaste.net/wp-content/uploads/2018/08/Pan-Seared-Scallops-Recipe-1200.jpg",
+    "description": "Jumbo diverging scallops served over a bed of sweet corn puree and crispy pancetta.",
+    "detailedDescription": "Jumbo diverging scallops served over a bed of sweet corn puree and crispy pancetta. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Lobster Ravioli",
+    "price": 32,
+    "category": "Main Course",
+    "image": "https://www.allrecipes.com/thmb/FXnVPEsNX3uejRtnnqVVXfItB3w=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Lobster-raviolis-mfs_004_4x3-d53a128124744dc6a75a2b4e317a8cd6.jpg",
+    "description": "Fresh handmade pasta stuffed with Maine lobster, smothered in a saffron cream sauce.",
+    "detailedDescription": "Fresh handmade pasta stuffed with Maine lobster, smothered in a saffron cream sauce. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Herb-Crusted Rack of Lamb",
+    "price": 42,
+    "category": "Main Course",
+    "image": "https://www.seriouseats.com/thmb/mtvx-SUuo3p1K6JUlbDXY36_tno=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__20101019-rack-of-lamb-afa441303d7446bdb864126a43f3a2a3.jpg",
+    "description": "New Zealand lamb rack crusted in Dijon and herbs, served with whipped potato.",
+    "detailedDescription": "New Zealand lamb rack crusted in Dijon and herbs, served with whipped potato. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Molten Chocolate Dome",
+    "price": 12,
+    "category": "Desserts",
+    "image": "https://static.vecteezy.com/system/resources/previews/055/619/292/large_2x/a-luxurious-restaurants-signature-dessert-featuring-a-chocolate-dome-with-molten-caramel-inside-photo.jpg",
+    "description": "Rich Belgian chocolate core surrounded by a hard chocolate shell, served with vanilla bean ice cream.",
+    "detailedDescription": "Rich Belgian chocolate core surrounded by a hard chocolate shell, served with vanilla bean ice cream. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Classic Tiramisu",
+    "price": 10,
+    "category": "Desserts",
+    "image": "https://staticcookist.akamaized.net/wp-content/uploads/sites/22/2024/09/THUMB-VIDEO-2_rev1-56.jpeg",
+    "description": "Espresso-soaked ladyfingers layered with rich mascarpone cream and dusted with dark cocoa.",
+    "detailedDescription": "Espresso-soaked ladyfingers layered with rich mascarpone cream and dusted with dark cocoa. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Passionfruit Panna Cotta",
+    "price": 11,
+    "category": "Desserts",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwnYafPJOx8ygqw-3mW7YKKb6N9BZSlkWISg&s",
+    "description": "Silky smooth vanilla cream dessert topped with a vibrant and tart passionfruit glaze.",
+    "detailedDescription": "Silky smooth vanilla cream dessert topped with a vibrant and tart passionfruit glaze. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Signature Mojito",
+    "price": 9,
+    "category": "Drinks",
+    "image": "https://originalsin.com.sg/wp-content/uploads/2025/04/mojito-recipe-1745994107.jpg",
+    "description": "Fresh mint, muddled lime, premium white rum, and sparkling soda.",
+    "detailedDescription": "Fresh mint, muddled lime, premium white rum, and sparkling soda. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Smoked Old Fashioned",
+    "price": 14,
+    "category": "Drinks",
+    "image": "https://jeffersonsbourbon.com/wp-content/uploads/2024/04/smoked-old-fashioned-cocktail.webp",
+    "description": "Woodford Reserve bourbon, bitters, dark cherry, and a genuine hickory smoke infusion.",
+    "detailedDescription": "Woodford Reserve bourbon, bitters, dark cherry, and a genuine hickory smoke infusion. Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  },
+  {
+    "name": "Lavender Lemonade",
+    "price": 7,
+    "category": "Drinks",
+    "image": "https://www.mypricechopper.com/Frontend/Media/Recipes/CoconutLavenderLemonade_Web_1110x625.jpg",
+    "description": "Freshly squeezed lemonade infused with house-made lavender syrup (Non-Alcoholic).",
+    "detailedDescription": "Freshly squeezed lemonade infused with house-made lavender syrup (Non-Alcoholic). Prepared with the finest ingredients and expertly crafted by our culinary team to provide an unforgettable tasting experience. Enjoy the magnificent blend of textures and deeply rich flavor profiles tailored specially for Savoury."
+  }
+]
