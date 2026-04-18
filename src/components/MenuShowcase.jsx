@@ -1,12 +1,91 @@
 import React, { useState, useEffect } from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
+
 import { db, collection, getDocs } from '../firebase';
 import { Plus, X, Minus } from 'lucide-react';
-import { useAuth } from '../contexts/AuthContext';
-import { useCart } from '../contexts/CartContext';
+import { useAuth } from '../hooks/useAuth';
+import { useCart } from '../hooks/useCart';
+
 import { useNavigate } from 'react-router-dom';
 
 const categories = ['All', 'Starters', 'Main Course', 'Desserts', 'Drinks'];
+
+// Reusable Add/Qty component (moved outside to satisfy React rules)
+const QuantityController = ({ item, cartItems, addToCart, updateQuantity, handleAction }) => {
+  const cartItem = cartItems.find(i => i.id === item.id);
+  const qty = cartItem ? cartItem.qty : 0;
+
+  if (qty === 0) {
+    return (
+      <button 
+        onClick={(e) => handleAction(e, () => addToCart(item))}
+        style={{ 
+          backgroundColor: '#fff', 
+          color: 'var(--color-primary)', 
+          border: '1px solid #e0e0e0',
+          borderRadius: '8px', 
+          padding: '0.4rem 1.5rem', 
+          fontWeight: 800,
+          fontSize: '1rem',
+          cursor: 'pointer',
+          transition: 'all 0.2s',
+          textTransform: 'uppercase'
+        }}
+      >
+        ADD
+      </button>
+    );
+  }
+
+  return (
+    <div 
+      onClick={(e) => e.stopPropagation()} 
+      style={{ 
+        display: 'flex', 
+        alignItems: 'center', 
+        backgroundColor: '#fff', 
+        border: '1px solid #e0e0e0',
+        borderRadius: '8px', 
+        overflow: 'hidden'
+      }}
+    >
+      <button 
+        onClick={(e) => handleAction(e, () => updateQuantity(item.id, qty - 1))}
+        style={{ 
+          background: 'transparent', 
+          border: 'none', 
+          color: 'var(--color-primary)', 
+          cursor: 'pointer', 
+          padding: '0.4rem 0.6rem',
+          display: 'flex', alignItems: 'center', justifyContent: 'center'
+        }}
+      >
+        <Minus size={18} strokeWidth={3} />
+      </button>
+      <span style={{ 
+        fontSize: '1rem', 
+        fontWeight: 800, 
+        width: '24px', 
+        textAlign: 'center', 
+        color: 'var(--color-primary)' 
+      }}>{qty}</span>
+      <button 
+        onClick={(e) => handleAction(e, () => updateQuantity(item.id, qty + 1))}
+        style={{ 
+          background: 'transparent', 
+          border: 'none', 
+          color: 'var(--color-primary)', 
+          cursor: 'pointer', 
+          padding: '0.4rem 0.6rem',
+          display: 'flex', alignItems: 'center', justifyContent: 'center'
+        }}
+      >
+        <Plus size={18} strokeWidth={3} />
+      </button>
+    </div>
+  );
+};
 
 const MenuShowcase = () => {
   const [activeTab, setActiveTab] = useState('All');
@@ -23,7 +102,7 @@ const MenuShowcase = () => {
   useEffect(() => {
     const fetchMenu = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, 'menu'));
+        const querySnapshot = await getDocs(collection(db, "menu"));
         const items = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
         setMenuItems(items);
         setLoading(false);
@@ -50,82 +129,6 @@ const MenuShowcase = () => {
   const filteredItems = menuItems.filter(item => 
     activeTab === 'All' ? true : item.category === activeTab
   );
-
-  // Reusable Add/Qty component
-  const QuantityController = ({ item }) => {
-    const cartItem = cartItems.find(i => i.id === item.id);
-    const qty = cartItem ? cartItem.qty : 0;
-
-    if (qty === 0) {
-      return (
-        <button 
-          onClick={(e) => handleAction(e, () => addToCart(item))}
-          style={{ 
-            backgroundColor: '#fff', 
-            color: 'var(--color-primary)', 
-            border: '1px solid #e0e0e0',
-            borderRadius: '8px', 
-            padding: '0.4rem 1.5rem', 
-            fontWeight: 800,
-            fontSize: '1rem',
-            cursor: 'pointer',
-            transition: 'all 0.2s',
-            textTransform: 'uppercase'
-          }}
-        >
-          ADD
-        </button>
-      );
-    }
-
-    return (
-      <div 
-        onClick={(e) => e.stopPropagation()} 
-        style={{ 
-          display: 'flex', 
-          alignItems: 'center', 
-          backgroundColor: '#fff', 
-          border: '1px solid #e0e0e0',
-          borderRadius: '8px', 
-          overflow: 'hidden'
-        }}
-      >
-        <button 
-          onClick={(e) => handleAction(e, () => updateQuantity(item.id, qty - 1))}
-          style={{ 
-            background: 'transparent', 
-            border: 'none', 
-            color: 'var(--color-primary)', 
-            cursor: 'pointer', 
-            padding: '0.4rem 0.6rem',
-            display: 'flex', alignItems: 'center', justifyContent: 'center'
-          }}
-        >
-          <Minus size={18} strokeWidth={3} />
-        </button>
-        <span style={{ 
-          fontSize: '1rem', 
-          fontWeight: 800, 
-          width: '24px', 
-          textAlign: 'center', 
-          color: 'var(--color-primary)' 
-        }}>{qty}</span>
-        <button 
-          onClick={(e) => handleAction(e, () => updateQuantity(item.id, qty + 1))}
-          style={{ 
-            background: 'transparent', 
-            border: 'none', 
-            color: 'var(--color-primary)', 
-            cursor: 'pointer', 
-            padding: '0.4rem 0.6rem',
-            display: 'flex', alignItems: 'center', justifyContent: 'center'
-          }}
-        >
-          <Plus size={18} strokeWidth={3} />
-        </button>
-      </div>
-    );
-  };
 
   return (
     <section id="menu" style={{ padding: '6rem 0', backgroundColor: 'var(--color-bg-alt)' }}>
@@ -221,7 +224,13 @@ const MenuShowcase = () => {
                     
                     {/* Zomato style fast add block perfectly centered slightly above bottom edge of image container */}
                     <div style={{ position: 'absolute', bottom: '-18px', left: '50%', transform: 'translateX(-50%)', zIndex: 5, backgroundColor: '#fff', borderRadius: '8px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
-                      <QuantityController item={item} />
+                      <QuantityController 
+                        item={item} 
+                        cartItems={cartItems} 
+                        addToCart={addToCart} 
+                        updateQuantity={updateQuantity} 
+                        handleAction={handleAction} 
+                      />
                     </div>
                   </div>
                   
@@ -278,7 +287,13 @@ const MenuShowcase = () => {
                 {/* Unified Quantity / Action Bar */}
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 'auto' }}>
                    <div style={{ transform: 'scale(1.2)' }}>
-                      <QuantityController item={selectedItem} />
+                      <QuantityController 
+                        item={selectedItem} 
+                        cartItems={cartItems} 
+                        addToCart={addToCart} 
+                        updateQuantity={updateQuantity} 
+                        handleAction={handleAction} 
+                      />
                    </div>
                 </div>
 

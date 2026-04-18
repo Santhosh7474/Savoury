@@ -4,8 +4,8 @@ import MenuShowcase from '../components/MenuShowcase';
 import ReservationSection from '../components/ReservationSection';
 import Testimonials from '../components/Testimonials';
 import Footer from '../components/Footer';
-
 const Home = () => {
+
   return (
     <>
       <HeroSection />

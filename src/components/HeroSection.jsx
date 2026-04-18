@@ -1,5 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion, useScroll, useTransform } from 'framer-motion';
+
 import { Star, ShoppingBag, ArrowDown } from 'lucide-react';
 
 const HeroSection = () => {
@@ -9,15 +11,15 @@ const HeroSection = () => {
   const textY = useTransform(scrollYProgress, [0, 1], ['0%', '15%']);
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
-  // Floating particles
-  const particles = Array.from({ length: 20 }, (_, i) => ({
+  // Floating particles (deterministic stable values for React purity)
+  const particles = React.useMemo(() => Array.from({ length: 20 }, (_, i) => ({
     id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: 2 + Math.random() * 4,
-    duration: 3 + Math.random() * 4,
-    delay: Math.random() * 2,
-  }));
+    x: (i * 37) % 100,
+    y: (i * 13) % 100,
+    size: 2 + (i % 5),
+    duration: 3 + (i % 4),
+    delay: (i * 0.7) % 2,
+  })), []);
 
   return (
     <section ref={sectionRef} className="hero-section" style={{ padding: 0, position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
@@ -106,13 +108,14 @@ const HeroSection = () => {
                 { number: '4.9', label: 'Rating' },
                 { number: '10K+', label: 'Orders' },
                 { number: '45min', label: 'Delivery' }
-              ].map((stat, i) => (
-                <div key={i} style={{ textAlign: 'center' }}>
+              ].map((stat, idx) => (
+                <div key={idx} style={{ textAlign: 'center' }}>
                   <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--color-accent)' }}>{stat.number}</div>
                   <div style={{ fontSize: '0.8rem', opacity: 0.7, textTransform: 'uppercase', letterSpacing: '1px' }}>{stat.label}</div>
                 </div>
               ))}
             </motion.div>
+
           </motion.div>
 
           {/* Right Glass Card */}

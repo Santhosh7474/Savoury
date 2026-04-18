@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Globe, MessageCircle, Heart, MapPin, Phone, Mail, ArrowUp } from 'lucide-react';
+import { Globe, MessageCircle, Send, Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -21,7 +20,7 @@ const Footer = () => {
               Experience culinary excellence. We bring the finest farm-to-table dining with seamless online ordering and reservations.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem' }}>
-              {[Globe, MessageCircle, Heart].map((Icon, i) => (
+              {[Facebook, Globe, MessageCircle, Send].map((Icon, i) => (
                 <a key={i} href="#" style={{
                   width: '40px', height: '40px', borderRadius: '10px',
                   background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)',
@@ -36,6 +35,7 @@ const Footer = () => {
                 </a>
               ))}
             </div>
+
           </div>
 
           {/* Quick Links */}

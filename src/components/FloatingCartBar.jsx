@@ -1,8 +1,9 @@
 import React from 'react';
-import { useCart } from '../contexts/CartContext';
+import { useCart } from '../hooks/useCart';
 import { useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import { ShoppingBag } from 'lucide-react';
+
 
 const FloatingCartBar = () => {
   const { cartItems, cartTotal } = useCart();

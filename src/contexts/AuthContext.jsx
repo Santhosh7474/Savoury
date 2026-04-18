@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { auth, googleProvider } from '../firebase';
 import { 
   onAuthStateChanged, 
@@ -8,9 +8,8 @@ import {
   signOut 
 } from 'firebase/auth';
 
-const AuthContext = createContext();
+import { AuthContext } from '../contexts/AuthContextInstance';
 
-export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);

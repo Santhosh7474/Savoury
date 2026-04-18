@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { ShoppingCart, User, LogOut, Package, Menu, X } from 'lucide-react';
-import { useAuth } from '../contexts/AuthContext';
-import { useCart } from '../contexts/CartContext';
-import { motion, AnimatePresence } from 'framer-motion';
+import { ShoppingCart, LogOut, Package, Menu, X } from 'lucide-react';
+import { useAuth } from '../hooks/useAuth';
+import { useCart } from '../hooks/useCart';
+// eslint-disable-next-line no-unused-vars
+import { AnimatePresence, motion } from 'framer-motion';
+
 
 const Navbar = () => {
   const { currentUser, logout } = useAuth();
@@ -21,11 +23,6 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [location.pathname]);
-
   const handleLogout = async () => {
     try { await logout(); navigate('/'); } catch (err) { console.error(err); }
   };
@@ -41,6 +38,8 @@ const Navbar = () => {
     position: 'relative',
     padding: '0.25rem 0'
   });
+
+  const closeMobile = () => setMobileOpen(false);
 
   return (
     <motion.nav
@@ -147,17 +146,17 @@ const Navbar = () => {
             style={{ overflow: 'hidden', borderTop: '1px solid rgba(255,255,255,0.1)' }}
           >
             <div style={{ padding: '1rem 2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <Link to="/" style={navLinkStyle('/')}>Home</Link>
-              <a href="/#menu" style={{ color: '#fff', textDecoration: 'none' }}>Menu</a>
-              <a href="/#reservations" style={{ color: '#fff', textDecoration: 'none' }}>Reservations</a>
-              {currentUser && <Link to="/orders" style={navLinkStyle('/orders')}>My Orders</Link>}
-              <Link to="/checkout" style={navLinkStyle('/checkout')}>Cart ({cartCount})</Link>
+              <Link to="/" onClick={closeMobile} style={navLinkStyle('/')}>Home</Link>
+              <a href="/#menu" onClick={closeMobile} style={{ color: '#fff', textDecoration: 'none' }}>Menu</a>
+              <a href="/#reservations" onClick={closeMobile} style={{ color: '#fff', textDecoration: 'none' }}>Reservations</a>
+              {currentUser && <Link to="/orders" onClick={closeMobile} style={navLinkStyle('/orders')}>My Orders</Link>}
+              <Link to="/checkout" onClick={closeMobile} style={navLinkStyle('/checkout')}>Cart ({cartCount})</Link>
               {currentUser ? (
-                <button onClick={handleLogout} style={{ background: 'rgba(255,255,255,0.1)', border: 'none', color: '#fff', padding: '0.5rem', borderRadius: '8px', cursor: 'pointer', textAlign: 'left' }}>
+                <button onClick={() => { handleLogout(); closeMobile(); }} style={{ background: 'rgba(255,255,255,0.1)', border: 'none', color: '#fff', padding: '0.5rem', borderRadius: '8px', cursor: 'pointer', textAlign: 'left' }}>
                   Logout ({currentUser.email?.split('@')[0]})
                 </button>
               ) : (
-                <Link to="/auth" style={{ color: 'var(--color-accent)', textDecoration: 'none', fontWeight: 600 }}>Login / Sign Up</Link>
+                <Link to="/auth" onClick={closeMobile} style={{ color: 'var(--color-accent)', textDecoration: 'none', fontWeight: 600 }}>Login / Sign Up</Link>
               )}
             </div>
           </motion.div>

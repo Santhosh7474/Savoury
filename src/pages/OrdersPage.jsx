@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useAuth } from '../contexts/AuthContext';
-import { useCart } from '../contexts/CartContext';
+import { useAuth } from '../hooks/useAuth';
+import { useCart } from '../hooks/useCart';
 import { useNavigate } from 'react-router-dom';
-import { db, collection, getDocs, query, where, orderBy } from '../firebase';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Package, ChevronDown, ChevronUp, CreditCard, Calendar, CheckCircle, XCircle, Clock, ShoppingCart } from 'lucide-react';
+import { db, collection, getDocs, query, where } from '../firebase';
+import { AnimatePresence } from 'framer-motion';
+import { Package, ChevronDown, ChevronUp, CreditCard, Calendar, CheckCircle, XCircle, Clock, RotateCcw } from 'lucide-react';
+
 
 const OrdersPage = () => {
   const { currentUser } = useAuth();
@@ -14,6 +15,7 @@ const OrdersPage = () => {
   const [loading, setLoading] = useState(true);
   const [expandedOrder, setExpandedOrder] = useState(null);
   const [reorderSuccess, setReorderSuccess] = useState(false);
+
 
   useEffect(() => {
     if (!currentUser) {

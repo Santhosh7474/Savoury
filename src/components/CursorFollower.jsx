@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion, useSpring, useMotionValue } from 'framer-motion';
+
 
 const CursorFollower = () => {
   const [isVisible, setIsVisible] = useState(false);

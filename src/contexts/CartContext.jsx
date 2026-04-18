@@ -1,8 +1,5 @@
-import React, { createContext, useContext, useState } from 'react';
-
-const CartContext = createContext();
-
-export const useCart = () => useContext(CartContext);
+import { useState } from 'react';
+import { CartContext } from './CartContextInstance';
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
@@ -26,7 +23,7 @@ export const CartProvider = ({ children }) => {
   // Update Qty
   const updateQuantity = (itemId, newQty) => {
     if (newQty <= 0) return removeFromCart(itemId);
-    setCartItems(prev => prev.map(i => i.id === itemId ? { ...i, qty: newQty } : i));
+    setCartItems(prev => prev.map(i => i.id === itemId ? { ...i, qty: newQty } : i))
   };
 
   // Total
@@ -57,6 +54,7 @@ export const CartProvider = ({ children }) => {
     removeFromCart,
     updateQuantity,
     cartTotal,
+    addMultipleToCart,
     clearCart
   };
 

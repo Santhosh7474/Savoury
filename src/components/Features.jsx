@@ -1,6 +1,8 @@
 import React from 'react';
 import { Utensils, CalendarCheck, FileText, CreditCard, BarChart3, Smartphone } from 'lucide-react';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
+
 
 const featureItems = [
   {

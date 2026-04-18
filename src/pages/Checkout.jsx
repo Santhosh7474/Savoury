@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useCart } from '../contexts/CartContext';
-import { useAuth } from '../contexts/AuthContext';
+import { useCart } from '../hooks/useCart';
+import { useAuth } from '../hooks/useAuth';
+
+
 import { useNavigate } from 'react-router-dom';
 import { Trash2, Tag, X, CheckCircle, XCircle, ArrowLeft, Minus, Plus } from 'lucide-react';
 import { db, addDoc, collection } from '../firebase';
-import { motion, AnimatePresence } from 'framer-motion';
+
 
 // Coupon definitions
 const COUPONS = [
@@ -117,9 +119,10 @@ const Checkout = () => {
       };
 
       const rzp = new window.Razorpay(options);
-      rzp.on('payment.failed', function (response) {
+      rzp.on('payment.failed', function () {
         setPaymentResult('failed');
       });
+
       rzp.open();
     } catch (error) {
       console.error(error);
@@ -199,26 +202,30 @@ const Checkout = () => {
               : 'Something went wrong with your payment. Please try again or use a different payment method.'}
           </motion.p>
 
-          {/* Confetti-like dots for success */}
+          {/* Confetti-like dots for success (stable values for React Purity) */}
           {isSuccess && (
             <>
-              {[...Array(12)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 0 }}
-                  animate={{
-                    opacity: [0, 1, 0],
-                    y: [-20, -60 - Math.random() * 40],
-                    x: (Math.random() - 0.5) * 200
-                  }}
-                  transition={{ delay: 0.2 + i * 0.05, duration: 1.2 }}
-                  style={{
-                    position: 'absolute', top: '30%', left: '50%',
-                    width: '8px', height: '8px', borderRadius: '50%',
-                    backgroundColor: ['#22c55e', '#D4AF37', '#0F3D2E', '#f59e0b'][i % 4]
-                  }}
-                />
-              ))}
+              {[...Array(12)].map((_, i) => {
+                const randomY = -60 - (i * 7) % 40;
+                const randomX = (i * 31) % 200 - 100;
+                return (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 0 }}
+                    animate={{
+                      opacity: [0, 1, 0],
+                      y: [-20, randomY],
+                      x: randomX
+                    }}
+                    transition={{ delay: 0.2 + i * 0.05, duration: 1.2 }}
+                    style={{
+                      position: 'absolute', top: '30%', left: '50%',
+                      width: '8px', height: '8px', borderRadius: '50%',
+                      backgroundColor: ['#22c55e', '#D4AF37', '#0F3D2E', '#f59e0b'][i % 4]
+                    }}
+                  />
+                );
+              })}
             </>
           )}
 

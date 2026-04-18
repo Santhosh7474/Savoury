@@ -1,14 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { db, collection, getDocs } from '../firebase';
 
 const Testimonials = () => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const intervalRef = useRef(null);
-
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
@@ -24,22 +21,6 @@ const Testimonials = () => {
     fetchTestimonials();
   }, []);
 
-  // Auto-carousel
-  useEffect(() => {
-    if (reviews.length <= 1) return;
-    intervalRef.current = setInterval(() => {
-      setActiveIndex(prev => (prev + 1) % reviews.length);
-    }, 5000);
-    return () => clearInterval(intervalRef.current);
-  }, [reviews.length]);
-
-  const goTo = (idx) => {
-    setActiveIndex(idx);
-    clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(() => {
-      setActiveIndex(prev => (prev + 1) % reviews.length);
-    }, 5000);
-  };
 
   if (loading) {
     return (
