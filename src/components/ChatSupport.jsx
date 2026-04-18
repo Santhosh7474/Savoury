@@ -208,4 +208,3 @@ const ChatSupport = () => {
 
 export default ChatSupport;
 
-export default ChatSupport;
