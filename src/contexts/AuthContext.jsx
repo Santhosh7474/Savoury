@@ -8,7 +8,8 @@ import {
   signOut 
 } from 'firebase/auth';
 
-import { AuthContext } from '../contexts/AuthContextInstance';
+import { AuthContext } from './AuthContextInstance';
+
 
 
 export const AuthProvider = ({ children }) => {

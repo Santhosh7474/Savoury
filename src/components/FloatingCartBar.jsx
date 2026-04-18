@@ -1,7 +1,8 @@
 import React from 'react';
 import { useCart } from '../hooks/useCart';
 import { useNavigate } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+
 import { ShoppingBag } from 'lucide-react';
 
 

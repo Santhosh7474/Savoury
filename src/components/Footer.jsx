@@ -20,7 +20,8 @@ const Footer = () => {
               Experience culinary excellence. We bring the finest farm-to-table dining with seamless online ordering and reservations.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem' }}>
-              {[Facebook, Globe, MessageCircle, Send].map((Icon, i) => (
+              {[Globe, MessageCircle, Send, Mail].map((Icon, i) => (
+
                 <a key={i} href="#" style={{
                   width: '40px', height: '40px', borderRadius: '10px',
                   background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)',

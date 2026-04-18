@@ -391,32 +391,151 @@ section {
 }
 
 /* ============ RESPONSIVE ============ */
+
+/* ── Tablet (≤1024px) ─────────────────────── */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  /* Hero two-column → single column */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: 2rem !important;
+  }
+
+  .hero-grid > div:last-child {
+    display: none !important; /* Hide glass card on tablet */
+  }
+
+  /* Features grid 3-col → 2-col */
+  #features [style*="repeat(auto-fit"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Footer 4-col → 2-col */
+  footer .container > div:first-child > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2rem !important;
+  }
+}
+
+/* ── Mobile (≤768px) ──────────────────────── */
 @media (max-width: 768px) {
   .container {
     padding: 0 1.25rem;
   }
 
   section {
-    padding: 4rem 0;
+    padding: 3.5rem 0;
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Navbar */
   .nav-links-desktop {
     display: none !important;
   }
-
   .nav-mobile-toggle {
     display: flex !important;
   }
 
+  /* Hero */
   h1 {
-    font-size: 2.5rem !important;
+    font-size: 2.4rem !important;
+  }
+
+  .hero-section {
+    min-height: 100svh;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center;
+    padding: 5rem 0 2rem;
+  }
+
+  .hero-grid > div:last-child {
+    display: none !important;
+  }
+
+  .hero-grid > div:first-child {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Menu Showcase */
+  #menu > div > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Menu category tabs */
+  #menu > div > div[style*="gap: '1rem'"] {
+    flex-wrap: wrap;
+    gap: 0.5rem !important;
+  }
+
+  /* Reservation Section */
+  #reservations > div > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Testimonials grid */
+  #testimonials [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Footer */
+  footer .container > div:first-child > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* Features grid */
+  #features [style*="repeat(auto-fit"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Buttons row */
+  .hero-section .container a,
+  .hero-section .container button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Trust badges centered */
+  .hero-section [style*="marginTop: '3rem'"] {
+    justify-content: center !important;
+  }
+
+  /* OrdersPage */
+  .orders-grid [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Checkout */
+  .checkout-layout [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Auth page */
+  .auth-container {
+    flex-direction: column !important;
+    min-height: unset !important;
   }
 }
 
+/* ── Small Mobile (≤480px) ────────────────── */
 @media (max-width: 480px) {
   .container {
     padding: 0 1rem;
@@ -427,9 +546,29 @@ section {
   }
 
   .section-title {
-    font-size: 1.75rem;
+    font-size: 1.65rem;
+  }
+
+  .btn-primary, .btn-outline {
+    padding: 0.7rem 1.25rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+  }
+
+  /* Chat moves up to not overlap floating cart */
+  .chat-support-wrapper {
+    bottom: 5.5rem !important;
+    right: 0.75rem !important;
+  }
+
+  .chat-window {
+    width: calc(100vw - 1.5rem) !important;
+    right: 0 !important;
+    height: 60vh !important;
+    max-height: 420px !important;
   }
 }
+
 
 /* ============ FOCUS STATES (Accessibility) ============ */
 *:focus-visible {

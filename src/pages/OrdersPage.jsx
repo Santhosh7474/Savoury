@@ -3,7 +3,8 @@ import { useAuth } from '../hooks/useAuth';
 import { useCart } from '../hooks/useCart';
 import { useNavigate } from 'react-router-dom';
 import { db, collection, getDocs, query, where } from '../firebase';
-import { AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+
 import { Package, ChevronDown, ChevronUp, CreditCard, Calendar, CheckCircle, XCircle, Clock, RotateCcw } from 'lucide-react';
 
 

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Send, User, Loader2 } from 'lucide-react';
-
 import { savouryAI } from '../utils/savouryAI';
 
 const ChatSupport = () => {
