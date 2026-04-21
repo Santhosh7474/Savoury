@@ -6,6 +6,7 @@ import { useAuth } from '../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 import { Trash2, Tag, X, CheckCircle, XCircle, ArrowLeft, Minus, Plus } from 'lucide-react';
 import { db, addDoc, collection } from '../firebase';
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 
 

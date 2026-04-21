@@ -3,6 +3,7 @@ import { useAuth } from '../hooks/useAuth';
 import { useCart } from '../hooks/useCart';
 import { useNavigate } from 'react-router-dom';
 import { db, collection, getDocs, query, where } from '../firebase';
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { Package, ChevronDown, ChevronUp, CreditCard, Calendar, CheckCircle, XCircle, Clock, RotateCcw } from 'lucide-react';
@@ -240,7 +241,7 @@ const OrdersPage = () => {
                             onClick={() => handleReorder(order.items)}
                             style={{ width: '100%', marginTop: '1.25rem', padding: '0.75rem', fontSize: '0.95rem', borderRadius: '10px', gap: '0.5rem' }}
                           >
-                            <ShoppingCart size={16} /> Reorder These Items
+                            <RotateCcw size={16} /> Reorder These Items
                           </button>
                         </div>
                       </motion.div>
