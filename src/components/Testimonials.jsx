@@ -1,29 +1,44 @@
 import React, { useState, useEffect } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-
-
-import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Star, Quote } from 'lucide-react';
 import { db, collection, getDocs } from '../firebase';
+import { staggerContainer, staggerItem, VIEWPORT } from '../utils/motion';
+
+const StarRating = ({ delay = 0 }) => (
+  <div style={{ display: 'flex', gap: '0.2rem', marginBottom: '1.25rem', color: 'var(--color-accent)' }}>
+    {[1,2,3,4,5].map((s, i) => (
+      <motion.span
+        key={s}
+        initial={{ opacity: 0, scale: 0 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={VIEWPORT}
+        transition={{ delay: delay + i * 0.05, type: 'spring', stiffness: 400, damping: 18 }}
+      >
+        <Star size={14} fill="var(--color-accent)" color="var(--color-accent)" />
+      </motion.span>
+    ))}
+  </div>
+);
 
 const Testimonials = () => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, "testimonials"));
+        const querySnapshot = await getDocs(collection(db, 'testimonials'));
         const items = [];
         querySnapshot.forEach((doc) => { items.push({ id: doc.id, ...doc.data() }); });
         setReviews(items);
       } catch (error) {
-        console.error("Error fetching testimonials:", error);
+        console.error('Error fetching testimonials:', error);
       }
       setLoading(false);
     };
     fetchTestimonials();
   }, []);
-
 
   if (loading) {
     return (
@@ -34,9 +49,7 @@ const Testimonials = () => {
             <div className="skeleton" style={{ width: '300px', height: '16px', margin: '0 auto' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
-            {[1,2,3].map(i => (
-              <div key={i} className="skeleton" style={{ height: '250px', borderRadius: '16px' }} />
-            ))}
+            {[1,2,3].map(i => <div key={i} className="skeleton" style={{ height: '250px', borderRadius: '16px' }} />)}
           </div>
         </div>
       </section>
@@ -48,38 +61,55 @@ const Testimonials = () => {
   return (
     <section style={{ backgroundColor: 'var(--color-bg)', overflow: 'hidden' }}>
       <div className="container">
+        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={VIEWPORT}
+          transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
           style={{ textAlign: 'center', marginBottom: '4rem' }}
         >
           <h2 className="section-title">What Our Diners Say</h2>
           <p className="section-subtitle" style={{ marginBottom: '2rem' }}>Real experiences from our valued guests</p>
         </motion.div>
 
-        {/* Desktop Grid View */}
-        <div className="testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+        {/* Cards — staggered reveal */}
+        <motion.div
+          variants={staggerContainer(0.1, 0)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={VIEWPORT}
+          style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}
+        >
           {reviews.map((r, i) => (
             <motion.div
               key={r.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -6, boxShadow: '0 20px 40px rgba(0,0,0,0.08)' }}
+              variants={staggerItem}
+              whileHover={{
+                y: -8,
+                boxShadow: '0 24px 48px rgba(0,0,0,0.09), 0 0 0 1.5px rgba(212,175,55,0.2)',
+              }}
+              transition={{ type: 'spring', stiffness: 250, damping: 22 }}
               style={{
                 backgroundColor: '#fff', padding: '2rem', borderRadius: 'var(--radius-lg)',
                 boxShadow: 'var(--shadow-sm)', position: 'relative',
-                border: '1px solid rgba(0,0,0,0.03)',
-                transition: 'all 0.3s ease'
+                border: '1px solid rgba(0,0,0,0.04)',
+                cursor: 'default',
               }}
             >
-              <Quote size={36} style={{ position: 'absolute', top: '1rem', right: '1rem', color: '#f0f0f0' }} />
+              {/* Quote icon — delayed fade */}
+              <motion.div
+                initial={{ opacity: 0, rotate: 5 }}
+                whileInView={{ opacity: 1, rotate: 10 }}
+                viewport={VIEWPORT}
+                transition={{ delay: i * 0.1 + 0.3, duration: 0.4 }}
+                style={{ position: 'absolute', top: '1rem', right: '1rem' }}
+              >
+                <Quote size={36} color="#f0f0f0" />
+              </motion.div>
 
-              <div style={{ display: 'flex', gap: '0.2rem', marginBottom: '1.25rem', color: 'var(--color-accent)' }}>
-                {[1,2,3,4,5].map(s => <Star key={s} size={14} fill="var(--color-accent)" />)}
-              </div>
+              {/* Stars — staggered per card */}
+              <StarRating delay={i * 0.08} />
 
               <p style={{ fontStyle: 'italic', color: '#444', lineHeight: 1.7, marginBottom: '1.5rem', fontSize: '0.95rem' }}>
                 "{r.text}"
@@ -93,7 +123,7 @@ const Testimonials = () => {
                     width: '44px', height: '44px', borderRadius: '50%',
                     backgroundColor: 'rgba(15,61,46,0.1)', color: 'var(--color-primary)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontWeight: 700, fontSize: '1.1rem'
+                    fontWeight: 700, fontSize: '1.1rem',
                   }}>
                     {r.name?.[0]?.toUpperCase()}
                   </div>
@@ -105,7 +135,7 @@ const Testimonials = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -34,6 +34,11 @@
   --transition-fast: 0.15s ease;
   --transition-base: 0.3s ease;
   --transition-slow: 0.5s ease;
+
+  /* Premium easing curves */
+  --ease-premium: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
 }
 
 /* ============ RESET & BASE ============ */
@@ -134,7 +139,7 @@ a { text-decoration: none; }
   letter-spacing: 1px;
   border: none;
   cursor: pointer;
-  transition: all var(--transition-base);
+  transition: transform 0.25s var(--ease-premium), box-shadow 0.25s var(--ease-premium), background 0.3s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -143,8 +148,28 @@ a { text-decoration: none; }
   position: relative;
   overflow: hidden;
   font-size: 0.9rem;
+  will-change: transform;
 }
 
+/* Shimmer sweep on hover */
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -110%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.28), transparent);
+  transform: skewX(-15deg);
+  transition: left 0.55s var(--ease-premium);
+  pointer-events: none;
+}
+
+.btn-primary:hover::before {
+  left: 160%;
+}
+
+/* Ripple on click */
 .btn-primary::after {
   content: '';
   position: absolute;
@@ -155,18 +180,28 @@ a { text-decoration: none; }
   background: rgba(255,255,255,0.3);
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  transition: width 0.6s ease, height 0.6s ease;
+  transition: width 0.55s ease, height 0.55s ease, opacity 0.55s ease;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .btn-primary:active::after {
   width: 300px;
   height: 300px;
+  opacity: 1;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #c09e32, var(--color-accent));
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+  background: linear-gradient(135deg, #c09e32, #d4af37);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+}
+
+/* Instant press-down feel */
+.btn-primary:active {
+  transform: translateY(0px) scale(0.97);
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.2);
+  transition-duration: 0.08s;
 }
 
 .btn-outline {
@@ -180,16 +215,22 @@ a { text-decoration: none; }
   letter-spacing: 1px;
   border: 1px solid var(--color-text-light);
   cursor: pointer;
-  transition: all var(--transition-base);
+  transition: transform 0.25s var(--ease-premium), box-shadow 0.25s var(--ease-premium), background-color 0.25s ease;
   text-decoration: none;
   position: relative;
   overflow: hidden;
+  will-change: transform;
 }
 
 .btn-outline:hover {
   background-color: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(255,255,255,0.1);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 4px 20px rgba(255,255,255,0.12);
+}
+
+.btn-outline:active {
+  transform: translateY(0) scale(0.97);
+  transition-duration: 0.08s;
 }
 
 /* ============ LAYOUT ============ */
@@ -221,6 +262,33 @@ section {
 }
 
 /* ============ ANIMATIONS ============ */
+
+/* Shimmer sweep used by btn-primary — defined here for reference */
+@keyframes shimmer-sweep {
+  0%   { left: -110%; }
+  100% { left: 160%; }
+}
+
+/* Nav link underline slide */
+@keyframes underline-slide {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* Subtle shake for form validation errors */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  15%  { transform: translateX(-7px); }
+  30%  { transform: translateX(7px); }
+  45%  { transform: translateX(-5px); }
+  60%  { transform: translateX(5px); }
+  75%  { transform: translateX(-3px); }
+  90%  { transform: translateX(3px); }
+}
+
+.animate-shake {
+  animation: shake 0.5s var(--ease-premium) both;
+}
 
 /* Skeleton shimmer for loading states */
 @keyframes skeleton-shimmer {
@@ -311,19 +379,31 @@ section {
   overflow: hidden;
 }
 .hover-zoom img {
-  transition: transform 0.5s ease;
+  transition: transform 0.5s var(--ease-premium);
 }
 .hover-zoom:hover img {
-  transform: scale(1.08);
+  transform: scale(1.06);
 }
 
-/* Card lift */
+/* Card lift — with shadow bloom */
 .hover-lift {
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  transition: transform 0.3s var(--ease-premium), box-shadow 0.3s var(--ease-premium), border-color 0.3s ease;
 }
 .hover-lift:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.12), 0 0 0 1px rgba(212,175,55,0.15);
+}
+
+/* Menu card — group hover image zoom via parent class */
+.menu-card {
+  transition: transform 0.3s var(--ease-premium), box-shadow 0.3s var(--ease-premium);
+}
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.10);
+}
+.menu-card:hover .menu-card-image img {
+  transform: scale(1.07);
 }
 
 /* Subtle scale */
@@ -588,12 +668,24 @@ select:focus-visible {
 input, select, textarea {
   font-family: var(--font-sans);
   font-size: 0.95rem;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition: border-color 0.2s var(--ease-premium), box-shadow 0.25s var(--ease-premium);
 }
 
 input:focus, select:focus, textarea:focus {
   border-color: var(--color-primary) !important;
-  box-shadow: 0 0 0 3px rgba(15, 61, 46, 0.1);
+  /* Left accent bar + soft ring */
+  box-shadow: -3px 0 0 var(--color-primary), 0 0 0 3px rgba(15, 61, 46, 0.08);
+  outline: none;
+}
+
+/* Validation states */
+input.input-error {
+  border-color: var(--color-error) !important;
+  box-shadow: -3px 0 0 var(--color-error), 0 0 0 3px rgba(239,68,68,0.08);
+}
+input.input-success {
+  border-color: var(--color-success) !important;
+  box-shadow: -3px 0 0 var(--color-success), 0 0 0 3px rgba(34,197,94,0.08);
 }
 
 /* ============ PROGRESS INDICATOR BAR ============ */
