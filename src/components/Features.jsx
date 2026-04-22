@@ -44,6 +44,7 @@ const Features = () => {
           initial="hidden"
           whileInView="visible"
           viewport={VIEWPORT}
+          className="features-grid"
           style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem' }}
         >
           {featureItems.map((item, index) => (

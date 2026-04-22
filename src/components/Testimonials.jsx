@@ -79,6 +79,7 @@ const Testimonials = () => {
           initial="hidden"
           whileInView="visible"
           viewport={VIEWPORT}
+          className="testimonials-grid"
           style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}
         >
           {reviews.map((r, i) => (

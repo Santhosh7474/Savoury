@@ -50,7 +50,7 @@ const ReservationSection = () => {
 
   return (
     <section id="reservations" style={{ backgroundColor: '#fff' }}>
-      <div className="container" style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 420px) 1fr', gap: '4rem', alignItems: 'center' }}>
+      <div className="container reservation-grid" style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 420px) 1fr', gap: '4rem', alignItems: 'center' }}>
 
         {/* Left: Form */}
         <motion.div
@@ -207,7 +207,7 @@ const ReservationSection = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={VIEWPORT}
           transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="hover-zoom"
+          className="hover-zoom reservation-image-col"
           style={{ position: 'relative', height: '100%', minHeight: '420px', borderRadius: 'var(--radius-xl)', overflow: 'hidden', boxShadow: 'var(--shadow-lg)' }}
         >
           <img

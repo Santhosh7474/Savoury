@@ -28,6 +28,7 @@ const Footer = () => {
           initial="hidden"
           whileInView="visible"
           viewport={VIEWPORT}
+          className="footer-grid"
           style={{ display: 'grid', gridTemplateColumns: 'minmax(250px, 2fr) 1fr 1fr 1fr', gap: '3rem', marginBottom: '4rem' }}
         >
           {/* Brand column */}

@@ -89,7 +89,7 @@ const HeroSection = () => {
               variants={staggerContainer(0.08, 0)}
               initial="hidden"
               animate="visible"
-              style={{ fontSize: '4rem', lineHeight: 1.08, marginBottom: '1.5rem', color: 'var(--color-text-light)' }}
+              style={{ fontSize: 'clamp(2rem, 5.5vw, 4rem)', lineHeight: 1.08, marginBottom: '1.5rem', color: 'var(--color-text-light)' }}
             >
               {headline.map((word, i) => (
                 <motion.span
@@ -122,7 +122,7 @@ const HeroSection = () => {
             </motion.p>
 
             {/* CTA Buttons */}
-            <motion.div variants={staggerItem} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+            <motion.div variants={staggerItem} className="hero-cta-row" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <motion.a
                 href="#reservations"
                 className="btn-primary"

@@ -133,7 +133,7 @@ const MenuShowcase = () => {
 
         {/* Category filters — shared layoutId pill for smooth slide */}
         <LayoutGroup>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem', marginBottom: '3rem', flexWrap: 'wrap' }}>
+          <div className="menu-categories" style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem', marginBottom: '3rem', flexWrap: 'wrap' }}>
             {categories.map(cat => (
               <motion.button
                 key={cat}
@@ -188,6 +188,7 @@ const MenuShowcase = () => {
         ) : (
           <motion.div
             layout
+            className="menu-grid-container"
             variants={staggerContainer(0.07, 0)}
             initial="hidden"
             whileInView="visible"
